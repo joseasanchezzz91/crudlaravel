@@ -8,7 +8,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -29,6 +29,10 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
+            }
+            a:hover {
+                background-color: white;
+                color:black;
             }
 
             .position-ref {
@@ -65,6 +69,7 @@
         </style>
     </head>
     <body>
+       <nav class="navbar navbar-inverse navbar-static-top"> 
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -73,6 +78,9 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
+                        <a href="{{route("marcas.index") }}">Marcas</a>
+                        <a href="{{route("carros.index") }}">Carros</a>
+                        <a href=""> holaaaa</a>
                     @endauth
                 </div>
             @endif
@@ -91,5 +99,6 @@
                 </div>
             </div>
         </div>
+      </nav>
     </body>
 </html>
