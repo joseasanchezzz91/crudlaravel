@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource("/marcas","MarcaController");
+Route::get('/marca/ver','MarcaController@verMarcas');
+
+Route::resource('/carros','CarroController');
+Route::get('/carro/ver','CarroController@verCarro');
